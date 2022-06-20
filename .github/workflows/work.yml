@@ -1,7 +1,8 @@
 name: Lint code base
 
 on:
-
+  workflow_dispatch:
+  
 jobs:
   lint:
     name: Lint code base
