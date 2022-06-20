@@ -1,24 +1,31 @@
-name: Lint code base
-
+name: Update Weather Locations Plot
 on:
   workflow_dispatch:
   
 jobs:
-  lint:
-    name: Lint code base
+  update_plot:
+    name: Update plot with new extreme weather data
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Convert notebooks to Python
-        run: find . -type f -name "*.ipynb" -exec jupyter nbconvert --to python --TemplateExporter.exclude_markdown=true {} \;
-
-      - name: Convert notebooks to Markdown
-        run: find . -type f -name "*.ipynb" -exec jupyter nbconvert --to markdown --TemplateExporter.exclude_code_cell=true {} \;
-
-      - name: Run Super-Linter
-        uses: github/super-linter@v3
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'
+          cache: 'pip'
+      - name: Install Dependencies
+      
+        run: pip install -r requirements.txt
+        
+      - name: Run Script and Update Plot
+        run: |
+          jupyter nbconvert --execute --to markdown README.ipynb
+          
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git commit -m "New message
+          git push origin master
