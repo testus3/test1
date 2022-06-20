@@ -1,6 +1,6 @@
 name: Lint code base
 
-on: ...
+on:
 
 jobs:
   lint:
