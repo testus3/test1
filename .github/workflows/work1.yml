@@ -36,7 +36,7 @@ jobs:
       - name: Run Script
         run: |
           jupyter nbconvert README.ipynb --to python
-          python -m pip freeze > requirements.txt
+          python -m pip3 freeze > requirements.txt
           python -m pip install requirements.txt
           jupyter nbconvert --execute --to markdown README.ipynb
           
