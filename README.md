@@ -23,6 +23,7 @@ fd.head(5)
 <div>
     
 <style scoped>
+    
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -35,6 +36,7 @@ fd.head(5)
         text-align: right;
     }
 </style>
+    
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
