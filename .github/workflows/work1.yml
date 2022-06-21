@@ -1,8 +1,13 @@
 # Building my own actions workflow
 # To check the python installation
 
+#on:
+#  workflow_dispatch:
+  
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
   
 jobs:
   build_wheel:
@@ -33,8 +38,9 @@ jobs:
           
       - name: Configure Git
         run: |
+          #git remote add origin https://github.com/testus3/test1.git
           git config user.email "joseantoniotv91@gmail.com"
-          git config user.name "tesus3"
+          git config user.name "testus3"
           git add -f ./dist/*.whl
           #git add .
           git commit -m 'pushing new wheel'
