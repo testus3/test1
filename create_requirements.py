@@ -9,7 +9,8 @@ imports = []
 for file in files:
     with open(os.path.join(folder, file), mode="r") as f:
         lines = f.read()
-        result = re.findall(r"(?<!from)import (\w+)[\n.]|from\s+(\w+)\s+import", lines)
+        #result = re.findall(r"(?<!from)import (\w+)[\n.]|from\s+(\w+)\s+import|(?<!from)import (\w+)[\as]", lines)
+        result = re.findall(r"(?<!from)import (\w+)[\n.]|from\s+(\w+)\s+import|import\s+(\w+)\s+as", lines)
         for imp in result:
             for i in imp:
                 if len(i):
