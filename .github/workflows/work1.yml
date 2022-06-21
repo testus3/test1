@@ -28,7 +28,7 @@ jobs:
           python -m pip install pandas
           python -m pip install numpy
           python -m  pip install matplotlib
-          python -m build
+          #python -m build
           #find ./dist/*.whl | xargs pip install
           
       - name: Run Script
@@ -40,7 +40,7 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
           #git add -f ./dist/*.whl
-          git add .
+          git add -f ./README_files/
           git commit -m 'pushing new wheel'
           git push origin main
           #git push
