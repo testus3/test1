@@ -8,7 +8,7 @@ jobs:
   build_wheel:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
         with:
           persist-credentials: false
           fetch-depth: 0
@@ -33,8 +33,8 @@ jobs:
           
       - name: Configure Git
         run: |
-          git config --local user.email "joseantoniotv91@gmail.com"
-          git config --local user.name "testus3"
+          git config --global user.email "joseantoniotv91@gmail.com"
+          git config --global user.name "testus3"
           git add -f ./dist/*.whl
           git commit -m 'pushing new wheel'
           git push origin master
