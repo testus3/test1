@@ -1,13 +1,13 @@
 # Building my own actions workflow
 # To check the python installation
 
-#on:
-#  workflow_dispatch:
-  
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+  
+#on:
+  #push:
+    #branches:
+      #- main
   
 jobs:
   build_wheel:
