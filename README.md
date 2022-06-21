@@ -1,16 +1,7 @@
 ## Lab 2: Simple Linear Regression
 
 ### 1. Manipulate the data <img src="https://latex.codecogs.com/svg.image?\mathbf{\textbf{fd}_{(398x6)}}">
-<img src="https://render.githubusercontent.com/render/math?math=\mathbf{\textbf{fd}_{(398x6)}}"> <br>
-<img src="https://render.githubusercontent.com/render/math?mathhttps://render.githubusercontent.com/render/math?math=x-z"> <br>
-<img src="https://render.githubusercontent.com/render/math?math={\color{red}\L = -\sum_{j}[T_{j}ln(O_{j})]}"> <br>
-<img src="https://render.githubusercontent.com/render/math?math=L=3"> <br>
-<img src="https://render.githubusercontent.com/render/math?math={\color{white}\L = -\sum_{j}[T_{j}ln(O_{j})]}"> <br>
-<img src="https://render.githubusercontent.com/render/math?math={\color{red}\sum_{d=0}^{d_{max}}}"> <br>
-<img src="https://render.githubusercontent.com/render/math?math={j_{3}}">  <br>
-<img src="https://render.githubusercontent.com/render/math?math={\color{red}\e^{i\pi}=1}"> <br>
-<img src="https://render.githubusercontent.com/render/math?math={\color{red}\A = -\sum_{j}[T_{j}ln(O_{j})] + \frac{\lambda W_{ij}^{2}}{2} \rightarrow \text{one-hot} \rightarrow -ln(O_{c}) + \frac{\lambda W_{ij}^{2}}{2}}">
-<img src="http://www.sciweavers.org/tex2img.php?eq=%20%5Csqrt%7Bab%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt=" \sqrt{ab} " width="44" height="22" />
+
 
 Tasks: 
 
