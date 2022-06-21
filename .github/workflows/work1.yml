@@ -37,8 +37,8 @@ jobs:
           
       - name: Configure Git
         run: |
-          git config --global user.email "joseantoniotv91@gmail.com"
           git config --global user.name "testus3"
+          git config --global user.email "joseantoniotv91@gmail.com"
           git add -f ./dist/*.whl
           git commit -m 'pushing new wheel'
           git push origin main
