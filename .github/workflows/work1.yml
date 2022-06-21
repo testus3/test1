@@ -42,5 +42,5 @@ jobs:
           #git add -f ./dist/*.whl
           git add .
           git commit -m 'pushing new wheel'
-          #git push origin main
-          git push
+          git push origin main
+          #git push
