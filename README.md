@@ -6,7 +6,8 @@
 <img src="https://render.githubusercontent.com/render/math?math={\color{red}\L = -\sum_{j}[T_{j}ln(O_{j})]}"> <br>
 <img src="https://render.githubusercontent.com/render/math?math=L=3"> <br>
 <img src="https://render.githubusercontent.com/render/math?math={\color{white}\L = -\sum_{j}[T_{j}ln(O_{j})]}"> <br>
-<img src="https://render.githubusercontent.com/render/math?math={\sum_{d=0}^{d_{max}}}">
+<img src="https://render.githubusercontent.com/render/math?math={\sum_{d=0}^{d_{max}}}"> <br>
+
 
 Tasks: 
 
