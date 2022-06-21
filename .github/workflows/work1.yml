@@ -28,7 +28,7 @@ jobs:
           python -m pip install pandas
           python -m pip install numpy
           python -m  pip install matplotlib
-          #python -m build
+          python -m build
           #find ./dist/*.whl | xargs pip install
           
       - name: Run Script
