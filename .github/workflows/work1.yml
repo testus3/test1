@@ -26,7 +26,7 @@ jobs:
           #python -m pip install --user --upgrade build
           python -m pip install jupyter
           python -m pip install regex
-          python -m pip install os-sys
+          #python -m pip install os-sys
           
           #python -m pip install pandas
           #python -m pip install numpy
@@ -39,7 +39,7 @@ jobs:
       - name: Run Script
         run: |
           jupyter nbconvert README.ipynb --to python
-          python -m create_requirements.py
+          python create_requirements.py
           python -m pip install -r requirements.txt
           jupyter nbconvert --execute --to markdown README.ipynb
           
