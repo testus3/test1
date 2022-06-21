@@ -7,12 +7,12 @@
 
 ## Lab 2: Simple Linear Regression <img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{e^{i\beta}=sin(\theta)}" align="center">
 
-### 1. Manipulate the data <img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{\text{fd}_{(398x6)}}" align="center">
+### 1. Manipulate the data <img src="https://latex.codecogs.com/svg.image?{\color{Blue}\pmb{\text{fd}_{(398x6)}}" align="center">
 
 
 ## Lab 2: Simple Linear Regression
 
-### 1. Manipulate the data <img src="https://latex.codecogs.com/svg.image?{\color{Blue}\pmb{\sum^2_{N=1}{a^n}}" align="center">
+### 1. Manipulate the data <img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{\sum^2_{N=1}{a^n}}" align="center">
 
 
 ## Lab 2: Simple Linear Regression
