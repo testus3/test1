@@ -2,10 +2,10 @@
 # To check the python installation
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  #push:
+    #branches: [ "main" ]
+  #pull_request:
+    #branches: [ "main" ]
   workflow_dispatch:
   
 jobs:
@@ -39,8 +39,8 @@ jobs:
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
-          git add -f ./dist/*.whl
-          #git add .
+          #git add -f ./dist/*.whl
+          git add .
           git commit -m 'pushing new wheel'
           git push origin main
           #git push
