@@ -170,7 +170,7 @@ dfshow.head(4)
 
 
 ### **2. Compute the means ($\bar{x}, \bar{y}$), covariance ($S_{xy}, S_{xx}$) and $\beta$s as:**
-```math
+$$
 \begin{align}
 \bar{x} &= \frac{1}{N}\sum_{i=1}^{N}{(x_i)} &
 \bar{y} &= \frac{1}{N}\sum_{i=1}^{N}{(y_i)} \\
@@ -181,7 +181,8 @@ S^2_{x}  &= S_{xx}= \frac{1}{N}\sum_{i=1}^{N}{(x_i - \bar{x})^2} \\
 RSS_{(\beta_0,\beta_1)} &:=\sum^n_{i=1}{(y_i-\hat{y}_i)^2} &
 \hat{y}_i &= \beta_1x_i + \beta_0
 \end{align}
-```
+$$
+
 Tasks:
 
 
