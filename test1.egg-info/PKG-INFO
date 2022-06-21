@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: test1
+Version: 0.0.1
+Summary: retention models to forecast churn
+Home-page: https://github.com/testus3/test1
+Author-email: joseantoniotv91@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Description-Content-Type: text/markdown
