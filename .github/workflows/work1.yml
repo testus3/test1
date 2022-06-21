@@ -2,18 +2,17 @@
 # To check the python installation
 
 on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
   workflow_dispatch:
-  
-#on:
-  #push:
-    #branches:
-      #- main
   
 jobs:
   build_wheel:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           persist-credentials: false
           fetch-depth: 0
