@@ -1,30 +1,36 @@
-name: My workflow
+# Building my own actions workflow
+# To check the python installation
 
 on:
   workflow_dispatch:
   
 jobs:
-  update_plot:
-    name: Update plot with new extreme weather data
+  build_wheel:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Setup Python
+      - uses: actions/checkout@v2
+      - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.7'
-          cache: 'pip'
-      - name: Install Dependencies
-        run: pip install -r requirements.txt
-        
-      - name: create md
-        run: |
-          jupyter nbconvert --execute --to markdown README.ipynb
+          python-version: 3.9
           
-      - name: Commit and Push Changes
+      - name: Build wheel and install
         run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-          git commit -m "New message
+          python -m pip install --user --upgrade build
+          python -m build
+          find ./dist/*.whl | xargs pip install
+          
+      - name: Configure Git
+        run: |
+          git config --global user.email "joseantoniotv91@gmail.com"
+          git config --global user.name "testus3"
+          
+      - name: Commit and push wheel
+        run: |
+          pwd
+          ls
+          ls ./dist
+          git add -f ./dist/*.whl
+          git commit -m 'pushing new wheel'
           git push origin master
+      - run: echo "This job's status is ${{ job.status }}."
