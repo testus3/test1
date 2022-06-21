@@ -12,7 +12,7 @@
 
 ## Lab 2: Simple Linear Regression
 
-### 1. Manipulate the data <img src="https://latex.codecogs.com/svg.image?{\color{Blue}\pmb{\sum^2_{N=1}{a^n}}" align="center" height="20">
+### 1. Manipulate the data <img src="https://latex.codecogs.com/svg.image?{\color{Blue}\pmb{\sum^2_{N=1}{a^n}}" align="center">
 
 
 ## Lab 2: Simple Linear Regression
