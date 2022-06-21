@@ -3,7 +3,9 @@
 ### 1. Manipulate the data <img src="https://latex.codecogs.com/svg.image?\mathbf{\textbf{fd}_{(398x6)}}">
 <img src="https://render.githubusercontent.com/render/math?math=\mathbf{\textbf{fd}_{(398x6)}}"> <br>
 <img src="https://render.githubusercontent.com/render/math?mathhttps://render.githubusercontent.com/render/math?math=x-z"> <br>
-<img src="https://render.githubusercontent.com/render/math?math={\color{red}\L = -\sum_{j}[T_{j}ln(O_{j})]}">
+<img src="https://render.githubusercontent.com/render/math?math={\color{red}\L = -\sum_{j}[T_{j}ln(O_{j})]}"> <br>
+<img src="https://render.githubusercontent.com/render/math?math={\color{red} L = 3 }">
+
 
 Tasks: 
 
