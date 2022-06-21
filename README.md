@@ -1,10 +1,6 @@
 ## Lab 2: Simple Linear Regression
 
-### 1. Manipulate the data <img src="https://latex.codecogs.com/svg.image?{\color{Blue}\mathbf{\textbf{fd}_{(398x6)}}" align="center" border="0" height="21">
-
-### 1. Manipulate the data <img src="https://latex.codecogs.com/svg.image?{\color{Blue}\pmb{\text{fd}_{(398x6)}}" align="center" border="0" height="21">
-
-### 1. Manipulate the data <img src="https://latex.codecogs.com/svg.image?{\color{Blue}\pmb{\text{fd}_{(398x6)}}" align="center" border="0" height="20">
+### 1. Manipulate the data <img src="https://latex.codecogs.com/svg.image?{\color{Blue}\textbf{\text{fd}_{(398x6)}}" align="center" border="0" height="20">
 
 
 *   Load the data with: `pdf.read_csv()`
