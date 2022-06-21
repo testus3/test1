@@ -17,7 +17,8 @@
 
 ## Lab 2: Simple Linear Regression
 
-### 1. Manipulate the data <img src="https://latex.codecogs.com/svg.image?{\color{Blue}\pmb{x + y = z}" align="center" border="0" height="20">
+### 1. Manipulate the data <img src="https://latex.codecogs.com/svg.image?{\color{Blue}\pmb{x+y=z}" align="center" border="0" height="20">
+
 
 *   Load the data with: `pdf.read_csv()`
 *   Show the array, get array size and list x items and get: `.values`, `.shape` & `.head()`
