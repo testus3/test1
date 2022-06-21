@@ -1,6 +1,6 @@
 ## **Lab 2: Simple Linear Regression**
 
-### **1. Manipulate the data $ \text{fd}_{(398x6)} $**
+### **1. Manipulate the data $\text{fd}_{(398x6)}$ **
 
 Tasks: 
 
