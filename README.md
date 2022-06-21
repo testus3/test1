@@ -1,7 +1,6 @@
 ## Lab 2: Simple Linear Regression
 
-### 1. Manipulate the data $fd_3$ \text{fd}_{398x6} <img src="https://latex.codecogs.com/svg.image?df_{3}" title="https://latex.codecogs.com/svg.image?df_{3}" />
-
+### 1. Manipulate the data $fd_3$ \text{fd}_{398x6} <img src="https://latex.codecogs.com/svg.image?df_{3}=4\textbf{}" title="https://latex.codecogs.com/svg.image?df_{3}=4\textbf{}" />
 Tasks: 
 
 *   Load the data with: `pdf.read_csv()`
