@@ -26,7 +26,7 @@ jobs:
           #python -m pip install --user --upgrade build
           python -m pip install jupyter
           python -m pip install regex
-          python -m pip install os
+          python -m pip install os-sys
           
           #python -m pip install pandas
           #python -m pip install numpy
