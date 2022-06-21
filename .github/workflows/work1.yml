@@ -14,15 +14,15 @@ jobs:
         with:
           python-version: 3.9
           
-      - name: Run Script
-        run: |
-          jupyter nbconvert --execute --to markdown README.ipynb
-
       - name: Build wheel and install
         run: |
           python -m pip install --user --upgrade build
           python -m build
           find ./dist/*.whl | xargs pip install
+          
+      - name: Run Script
+        run: |
+          jupyter nbconvert --execute --to markdown README.ipynb
           
       - name: Configure Git
         run: |
