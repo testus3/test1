@@ -33,7 +33,9 @@ jobs:
           
       - name: Configure Git
         run: |
-          git add -f ./dist/*.whl
+          git config user.email "joseantoniotv91@gmail.com"
+          git config user.name "tesus3"
+          git add -f ./dist/*.whl --allow-empty
           git commit -m 'pushing new wheel'
           git push -u origin master
       - run: echo "This job's status is ${{ job.status }}."
