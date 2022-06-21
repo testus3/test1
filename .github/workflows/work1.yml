@@ -4,22 +4,21 @@ on:
   workflow_dispatch:
   
 jobs:
-  build_wheel:
+  update_plot:
+    name: Update plot with new extreme weather data
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.9
-          cache-dependency-path: '**/setup.py'
-      - name: Build wheel and install
-        run: |
-          python -m pip install --user --upgrade build
-          python -m build
-          cache-dependency-path: '**/setup.py'
-          
-      - name: Run Script and Update Plot
+          python-version: '3.7'
+          cache: 'pip'
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+        
+      - name: create md
         run: |
           jupyter nbconvert --execute --to markdown README.ipynb
           
