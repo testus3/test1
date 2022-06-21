@@ -170,6 +170,7 @@ dfshow.head(4)
 
 
 ### **2. Compute the means ($\bar{x}, \bar{y}$), covariance ($S_{xy}, S_{xx}$) and $\beta$s as:**
+
 $$
 \begin{align}
 \bar{x} &= \frac{1}{N}\sum_{i=1}^{N}{(x_i)} &
@@ -237,6 +238,7 @@ Tasks:
   **3.2**  List items and drop the ones who don't have a value or are empty
 
 Example: Pick all $a_n | b_n>2$
+
 $$
 a_n\,\,\,b_n\\
 \begin{bmatrix}
@@ -245,6 +247,7 @@ a_n\,\,\,b_n\\
 4 & 8
 \end{bmatrix}
 $$
+
 Then $a_n=\{8,4\}$, in programming to calculate the mean of such $a_n$ with that condition, it'll be `print(np.mean(an[bn>2]))` 
 
 
