@@ -1,7 +1,8 @@
 ## Lab 2: Simple Linear Regression
 
 ### 1. Manipulate the data <img src="https://latex.codecogs.com/svg.image?\mathbf{\textbf{fd}_{(398x6)}}">
-<img src="https://render.githubusercontent.com/render/math?math=\mathbf{\textbf{fd}_{(398x6)}}">
+<img src="https://render.githubusercontent.com/render/math?math=\mathbf{\textbf{fd}_{(398x6)}}"> <br \>
+<img src="https://render.githubusercontent.com/render/math?mathhttps://render.githubusercontent.com/render/math?math=x-z">
 
 Tasks: 
 
