@@ -4,7 +4,8 @@
 <img src="https://render.githubusercontent.com/render/math?math=\mathbf{\textbf{fd}_{(398x6)}}"> <br>
 <img src="https://render.githubusercontent.com/render/math?mathhttps://render.githubusercontent.com/render/math?math=x-z"> <br>
 <img src="https://render.githubusercontent.com/render/math?math={\color{red}\L = -\sum_{j}[T_{j}ln(O_{j})]}"> <br>
-<img src="https://render.githubusercontent.com/render/math?math=L=3">
+<img src="https://render.githubusercontent.com/render/math?math=L=3"> <br>
+<img src="https://render.githubusercontent.com/render/math?math={\color{white}\L = -\sum_{j}[T_{j}ln(O_{j})]}">
 
 
 Tasks: 
