@@ -2,7 +2,10 @@
 
 ### 1. Manipulate the data <img src="https://latex.codecogs.com/svg.image?{\color{Blue}\pmb{\text{fd}_{(398x6)}}" align="center" border="0" height="20">
 
-## Lab 2: Simple Linear Regression <img src="https://latex.codecogs.com/svg.image?{\color{Blue}\pmb{e^{i\beta} = sin(\theta)}" align="center" border="0" height="20">
+
+
+
+## Lab 2: Simple Linear Regression <img src="https://latex.codecogs.com/svg.image?{\color{Blue}\pmb{e^{i\beta}=sin(\theta)}" align="center" border="0" height="20">
 
 ### 1. Manipulate the data <img src="https://latex.codecogs.com/svg.image?{\color{Blue}\pmb{\text{fd}_{(398x6)}}" align="center" border="0" height="20">
 
