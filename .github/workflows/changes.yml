@@ -32,3 +32,11 @@ jobs:
             echo "Hello world" > file1.txt
             ls
           done
+          
+      - name: Configure Git
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          git add .
+          git commit -a -m 'creating a file'
+          git push origin main -f
