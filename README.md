@@ -19,7 +19,7 @@
 
 ### 1. Manipulate the data <img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{x+y=z}" align="center">
 
-
+### 8. Compute the means (<img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{\bar{x},\bar{y}}" align="center">), covariance (<img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{S_{xy},S_{xx}}" align="center">) and <img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{\beta}" align="center">s as:
 
 *   Load the data with: `pdf.read_csv()`
 *   Show the array, get array size and list x items and get: `.values`, `.shape` & `.head()`
