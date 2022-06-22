@@ -27,4 +27,5 @@ jobs:
             echo "$file was changed"
             echo "$(dirname "${file}")"
             echo "$(cd "$(dirname "$file")" && pwd -P)/$(basename "$file")"
+            echo "$(cd "$(dirname "$file")" && pwd -P)"
           done
