@@ -17,6 +17,7 @@ jobs:
 
       - name: beautifyJupyterReadme
         run: |
+          jupyter nbconvert --execute --to markdown *.ipynb
           python beautifyJupyterReadme.py
       - name: Configure Git
         run: |
