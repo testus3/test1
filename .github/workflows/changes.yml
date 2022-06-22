@@ -28,6 +28,6 @@ jobs:
             echo "$(dirname "${file}")"
             echo "$(cd "$(dirname "$file")" && pwd -P)/$(basename "$file")"
             echo "$(cd "$(dirname "$file")" && pwd -P)"
-            cd "$(cd "$(dirname "$file")" && pwd -P)"
+            cd $(cd "$(dirname "$file")" && pwd -P)
             echo "Hello world" > newfile.txt
           done
