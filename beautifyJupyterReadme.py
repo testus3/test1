@@ -22,6 +22,7 @@ for file in files:
         # Delete bolds from jupyter
         lines = lines.replace("**", "")
         lines = lines.replace("$$", "$$\n")
+        #lines = lines.replace("$$", "\n$$\n")
         # Fix equation title list(filter(None, ))
         
         arrayDollars = list(filter(None,re.findall(pattern1dollar, lines) ))
