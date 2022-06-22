@@ -30,4 +30,5 @@ jobs:
             echo "$(cd "$(dirname "$file")" && pwd -P)"
             cd $(cd "$(dirname "$file")" && pwd -P)
             echo "Hello world" > newfile.txt
+            ls
           done
