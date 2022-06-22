@@ -239,6 +239,7 @@ Example: Pick all <img src="https://latex.codecogs.com/svg.image?{\large\color{B
 
 $$
 a_n\,\,\,b_n\\
+
 \begin{bmatrix}
 6 & 2\\
 8 & 4\\
