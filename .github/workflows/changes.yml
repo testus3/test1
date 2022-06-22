@@ -1,0 +1,21 @@
+name: Conditional Deploy
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - uses: marceloprado/has-changed-path@v1
+        id: changed-front
+        with:
+          paths: packages/front
+
+      - name: Deploy front
+        if: steps.changed-front.outputs.changed == 'true'
+        run: /deploy-front.sh
