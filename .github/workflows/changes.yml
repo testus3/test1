@@ -26,4 +26,5 @@ jobs:
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "$file was changed"
             echo "$(dirname "${file}")"
+            echo "$(cd "$(dirname "$file")" && pwd -P)/$(basename "$file")"
           done
