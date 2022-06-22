@@ -54,6 +54,7 @@ jobs:
           pip install -r requirements.txt
           jupyter nbconvert --execute --to markdown *.ipynb
           mv *.md README.md
+          python beautifyJupyterReadme.py
 
       - name: Configure Git
         run: |
