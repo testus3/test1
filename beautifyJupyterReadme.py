@@ -48,4 +48,4 @@ for file in files:
         lines = f.read()
         textWithoutStyle = re.sub('<style scoped>(\n.*?)*?\n</style>\n', '', lines, flags=re.MULTILINE)
         with open(os.path.join(folder, file), mode="w") as f:
-            f.write(textWithoutStyle )
+            f.write(textWithoutStyle)
