@@ -25,4 +25,4 @@ jobs:
           git config user.email "<>"
           git add .
           git commit -m 'beautify'
-          git push origin main
+          git push origin main -f
