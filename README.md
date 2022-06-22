@@ -1,6 +1,6 @@
-## **Lab 2: Simple Linear Regression**
+## Lab 2: Simple Linear Regression
 
-### **1. Manipulate the data $ \text{fd}_{(398x6)} $**
+### 1. Manipulate the data <img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{\text{fd}_{(398x6)}}" align="center">
 
 Tasks: 
 
@@ -22,19 +22,6 @@ fd.head(5)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -143,19 +130,6 @@ dfshow.head(4)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -191,8 +165,9 @@ dfshow.head(4)
 
 
 
-### **2. Compute the means ($\bar{x}, \bar{y}$), covariance ($S_{xy}, S_{xx}$) and $\beta$s as:**
+### 2. Compute the means (<img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{\bar{x},\bar{y}}" align="center">), covariance (<img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{S_{xy},S_{xx}}" align="center">) and <img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{\beta}" align="center">s as:
 $$
+
 \begin{align}
 \bar{x} &= \frac{1}{N}\sum_{i=1}^{N}{(x_i)} &
 \bar{y} &= \frac{1}{N}\sum_{i=1}^{N}{(y_i)} \\
@@ -204,6 +179,7 @@ RSS_{(\beta_0,\beta_1)} &:=\sum^n_{i=1}{(y_i-\hat{y}_i)^2} &
 \hat{y}_i &= \beta_1x_i + \beta_0
 \end{align}
 $$
+
 Tasks:
 
 
@@ -220,8 +196,8 @@ print("xm: %.2f" %xm,"and ym: %.2f" %ym)
 print('thi is xm: {:.3f}'.format(xm),'thi is ym: {:.3f}'.format(ym))
 
 syx = np.mean((y-ym)*(x-xm))
-sxx = np.mean((x-xm)**2);
-syy = np.mean((y-ym)**2);
+sxx = np.mean((x-xm)2);
+syy = np.mean((y-ym)2);
 beta1 = syx/sxx;
 beta0 = ym - beta1*xm;
 print("beta_1: ",beta1);
@@ -251,14 +227,15 @@ plt.show()
     
 
 
-### **3. Pick interval with condition and drop NA values**
+### 3. Pick interval with condition and drop NA values
 Tasks:
 
-  **3.1**   Pick values of y (mpg) so that its acceleration `acc>25`<br>
-  **3.2**  List items and drop the ones who don't have a value or are empty
+  3.1   Pick values of y (mpg) so that its acceleration `acc>25`<br>
+  3.2  List items and drop the ones who don't have a value or are empty
 
-Example: Pick all $a_n | b_n>2$
+Example: Pick all <img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{a_n|b_n>2}" align="center">
 $$
+
 a_n\,\,\,b_n\\
 \begin{bmatrix}
 6 & 2\\
@@ -266,7 +243,8 @@ a_n\,\,\,b_n\\
 4 & 8
 \end{bmatrix}
 $$
-Then $a_n=\{8,4\}$, in programming to calculate the mean of such $a_n$ with that condition, it'll be `print(np.mean(an[bn>2]))` 
+
+Then <img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{a_n=\{8,4\}}" align="center">, in programming to calculate the mean of such <img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{a_n}" align="center"> with that condition, it'll be `print(np.mean(an[bn>2]))` 
 
 
 
