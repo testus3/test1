@@ -24,5 +24,5 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
           git add .
-          git commit -m -a 'beautify'
+          git commit -a -m 'beautify'
           git push origin main -f
