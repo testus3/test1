@@ -25,7 +25,7 @@ for file in files:
         # Fix equation title list(filter(None, ))
         
         arrayDollars = list(filter(None,re.findall(pattern1dollar, lines) ))
-        print(arrayDollars)
+        #print(arrayDollars)
         
         #Counting number of ocurrences of $$
         numberOfOcurrences = len(arrayDollars)
