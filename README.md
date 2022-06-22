@@ -115,22 +115,6 @@ fd.head(5)
 </table>
 </div>
 
-## **Lab 2: Simple Linear Regression** $ e^{i\beta} = sin(\theta) $
-
-### **1. Manipulate the data $ \text{fd}_{(398x6)} $**
-
-
-## **Lab 2: Simple Linear Regression**
-
-### **1. Manipulate the data $ \sum^2_{N=1}{a^n} $**
-
-
-## **Lab 2: Simple Linear Regression**
-
-### **1. Manipulate the data $ x + y = z$**
-
-
-
 ```python
 import numpy as np
 import pandas as pd
