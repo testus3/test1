@@ -29,6 +29,6 @@ jobs:
             echo "$(cd "$(dirname "$file")" && pwd -P)/$(basename "$file")"
             echo "$(cd "$(dirname "$file")" && pwd -P)"
             cd $(cd "$(dirname "$file")" && pwd -P)
-            echo "Hello world" > newfile.txt
+            echo "Hello world" > file1.txt
             ls
           done
