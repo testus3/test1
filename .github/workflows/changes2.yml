@@ -25,7 +25,7 @@ jobs:
         run: |
           #echo "${{ steps.changed-files.outputs.all_changed_files }}"
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            if [ file = "*.txt" ]; then
+            if [ "$file" == "*.txt" ]; then
               echo "$file was changed"
               echo "$(dirname "${file}")"
               echo "$(cd "$(dirname "$file")" && pwd -P)/$(basename "$file")"
