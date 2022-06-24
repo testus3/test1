@@ -23,7 +23,8 @@ jobs:
       - name: List all changed files
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            if $file == '*.ipynb'
+            if [$file == '*.ipynb']
+            then
               echo "$file was changed"
               echo "$(dirname "${file}")"
               echo "$(cd "$(dirname "$file")" && pwd -P)/$(basename "$file")"
@@ -36,8 +37,7 @@ jobs:
               git add .
               git commit -a -m 'creating a file'
               git push origin main -f
-            endif
-
+            fi
           done
           
       # - name: Configure Git
