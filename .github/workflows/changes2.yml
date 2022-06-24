@@ -23,19 +23,19 @@ jobs:
 
       - name: List all changed files
         run: |
-          echo "list of files"
-          echo "${{ steps.changed-files.outputs.all_changed_files }}"
-          echo "end list of files"
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            #echo "$file"
-            #if [ $file == "*.txt" ]; then
-            if [[ $file == *.txt ]]; then
-              echo "$file was changed"
-              echo "$(dirname "${file}")"
-              echo "$(cd "$(dirname "$file")" && pwd -P)/$(basename "$file")"
-              echo "$(cd "$(dirname "$file")" && pwd -P)"
+            if [[ $file == *.ipynb ]]; then
+              #echo "$file was changed"
+              #echo "$(dirname "${file}")"
+              #echo "$(cd "$(dirname "$file")" && pwd -P)/$(basename "$file")"
+              #echo "$(cd "$(dirname "$file")" && pwd -P)"
+              echo "$(cd "$(dirname "$file")")"
               cd $(cd "$(dirname "$file")" && pwd -P)
-              echo "Hello there" > file1.txt
+              
+              #Installing jupyter & regex
+              #python -m pip install jupyter
+              #python -m pip install regex
+              #echo "Hello there" > file1.txt
               ls
             fi
           done
