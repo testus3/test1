@@ -41,7 +41,7 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
           echo "this is the message"
-          echo "$(git commit --allow-empty-message --no-edit)"
+          git status
           echo "this is the message"
           git add .
           git commit -Af -m 'creating a file'
