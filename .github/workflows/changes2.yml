@@ -44,5 +44,5 @@ jobs:
           echo "$(git commit --allow-empty-message --no-edit)"
           echo "this is the message"
           git add .
-          git commit -a -m 'creating a file'
+          git commit -Af -m 'creating a file'
           git push origin main -f
