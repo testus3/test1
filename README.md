@@ -237,8 +237,8 @@ Example: Pick all <img src="https://latex.codecogs.com/svg.image?{\large\color{B
 
 $$
 \begin{align}
-a_n &\quad b_n\\
-&\begin{bmatrix}
+a_n \quad b_n\\
+\begin{bmatrix}
 6 & 2\\
 8 & 4\\
 4 & 8
