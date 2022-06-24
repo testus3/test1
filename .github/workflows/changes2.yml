@@ -44,5 +44,5 @@ jobs:
           git status
           echo "this is the message"
           git add .
-          git commit -Af -m 'creating a file'
+          git commit -a -m 'creating a file'
           git push origin main -f
