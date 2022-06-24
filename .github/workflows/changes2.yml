@@ -23,15 +23,15 @@ jobs:
 
       - name: List all changed files
         run: |
-          echo "${{ steps.changed-files.outputs.all_changed_files }}"
+          #echo "${{ steps.changed-files.outputs.all_changed_files }}"
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            if [ "$file" = "*.txt" ]; then
+            if [ file = "*.txt" ]; then
               echo "$file was changed"
               echo "$(dirname "${file}")"
               echo "$(cd "$(dirname "$file")" && pwd -P)/$(basename "$file")"
               echo "$(cd "$(dirname "$file")" && pwd -P)"
               cd $(cd "$(dirname "$file")" && pwd -P)
-              echo "Hello world" > file1.txt
+              echo "Hello there" > file1.txt
               ls
             fi
           done
