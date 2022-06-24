@@ -40,9 +40,10 @@ jobs:
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
-          echo "this is the message"
+          echo "this is the message1"
           git status
-          echo "this is the message"
+          echo "this is the message2"
           git add .
-          git commit -a -m 'creating a file'
+          #git commit -a -m 'creating a file'
+          git diff --quiet && git diff --staged --quiet || git commit -am 'Added license headers'
           git push origin main -f
