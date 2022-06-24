@@ -236,7 +236,7 @@ Tasks:
 Example: Pick all <img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{a_n|b_n>2}" align="center">
 
 $$
-a_n\,\,\,b_n\\
+a_n \quad b_n\\
 \begin{bmatrix}
 6 & 2\\
 8 & 4\\
