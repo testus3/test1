@@ -236,14 +236,12 @@ Tasks:
 Example: Pick all <img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{a_n|b_n>2}" align="center">
 
 $$
-\begin{align}
 a_n \quad b_n\\
 \begin{bmatrix}
 6 & 2\\
 8 & 4\\
 4 & 8
 \end{bmatrix}
-\end{align]
 $$
 
 Then <img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{a_n=\{8,4\}}" align="center">, in programming to calculate the mean of such <img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{a_n}" align="center"> with that condition, it'll be `print(np.mean(an[bn>2]))` 
