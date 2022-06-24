@@ -23,7 +23,9 @@ jobs:
 
       - name: List all changed files
         run: |
-          #echo "${{ steps.changed-files.outputs.all_changed_files }}"
+          echo "list of files"
+          echo "${{ steps.changed-files.outputs.all_changed_files }}"
+          echo "end list of files"
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             #echo "$file"
             if [ $file == "*.txt" ]; then
