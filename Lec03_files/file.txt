@@ -4,6 +4,3 @@ b
 c
 d
 g
-3
-d3e
-df
