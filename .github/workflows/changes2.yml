@@ -24,7 +24,7 @@ jobs:
       - name: List all changed files
         run: |
           echo ${{ github.event.repository.name }}
-          ls ${{ github.event.repository.name }}
+          ls /home/runner/work/${{ github.event.repository.name }}/${{ github.event.repository.name }}
           if [[ ${{ steps.changed-files.outputs.all_changed_files }} == *.txt ]]; then
             echo "A txt file was modified/added"
           else
