@@ -32,7 +32,7 @@ jobs:
               echo "$(cd "$(dirname "$file")")"
               echo "this is the file name"
               echo "$(basename "$file")"
-              echo "ends file name'
+              echo "ends file name"
               cd $(cd "$(dirname "$file")" && pwd -P)
               #Installing jupyter & regex
               #python -m pip install jupyter
