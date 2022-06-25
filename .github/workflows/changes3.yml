@@ -31,8 +31,14 @@ jobs:
           if [[ ${{ steps.changed-files.outputs.all_changed_files }} == *.txt ]]; then
             echo "A file was modified/added"
           else
-            eecho "A txt file was not added/modified"
+            echo "A txt file was not added/modified"
           fi
+          
+          if [[ $(ls .) == *.ipynb ]]; then
+            python -m pip install jupyter
+            python -m pip install regex
+          fi
+          
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             if [[ $file == *.ipynb ]]; then
               #echo "$file was changed" #Lec03_files/file1.txt
@@ -42,15 +48,23 @@ jobs:
               cd $(cd "$(dirname "$file")" && pwd -P) #in the parent's folder
               
               #Installing jupyter & regex
-              python -m pip install jupyter
-              python -m pip install regex
-              
+              #python -m pip install jupyter
+              #python -m pip install regex
               #echo "Hello there" > file1.txt
-              jupyter nbconvert $(basename "$file") --to python
               
+              jupyter nbconvert $(basename "$file") --to python #$(basename "$file") = files.ipynb
               
-
-              jupyter nbconvert --execute --to markdown $(basename "$file").ipynb
+            fi
+          done
+          
+          if [[ $(ls .) == *.py ]]; then
+            python create_requirements.py   #create the requirements in the present folder
+            pip install -r requirements.txt #needs input or preceed action
+          fi
+          
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            if [[ $file == *.ipynb ]]; then
+              jupyter nbconvert --execute --to markdown $(basename "$file")
               mv $(basename "$file") $(basename "${file%%.*}")_files
               mv $(basename "${file%%.*}").py $(basename "${file%%.*}")_files
               mv requirements.txt $(basename "${file%%.*}")_files
@@ -58,11 +72,6 @@ jobs:
               mv $(basename "${file%%.*}").md $(basename "${file%%.*}")_files
             fi
           done
-          if [[ $(ls .) == *.py ]]; then
-            python create_requirements.py   #create the requirements in the present folder
-            pip install -r requirements.txt #needs input or preceed action
-          fi
-          
           
       - name: Configure Git
         run: |
