@@ -39,7 +39,7 @@ jobs:
               #python -m pip install regex
               #echo "Hello there" > file1.txt
               mkdir $(dirname "${file}")_newfolder
-              ls
+              echo "${file%%.*}"
               ls
             fi
           done
