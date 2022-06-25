@@ -25,10 +25,10 @@ jobs:
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             if [[ $file == *.txt ]]; then
-              #echo "$file was changed"
-              #echo "$(dirname "${file}")"
-              #echo "$(cd "$(dirname "$file")" && pwd -P)/$(basename "$file")"
-              #echo "$(cd "$(dirname "$file")" && pwd -P)"
+              echo "$file was changed"
+              echo "$(dirname "${file}")"
+              echo "$(cd "$(dirname "$file")" && pwd -P)/$(basename "$file")"
+              echo "$(cd "$(dirname "$file")" && pwd -P)"
               echo "$(cd "$(dirname "$file")")"
               cd $(cd "$(dirname "$file")" && pwd -P)
               
