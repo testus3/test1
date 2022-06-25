@@ -21,9 +21,11 @@ jobs:
 
       - name: List all changed files
         run: |
+          ls .
           if [[ $(ls .) == *.ipynb ]]; then
             pip install jupyter
             pip install regex
+            echo "ipynb file found"
           fi
           
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
