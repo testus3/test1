@@ -35,20 +35,21 @@ jobs:
           fi
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             if [[ $file == *.ipynb ]]; then
-              #echo "$file was changed"
-              #echo "$(dirname "${file}")"
-              #echo "$(cd "$(dirname "$file")" && pwd -P)/$(basename "$file")"
-              #echo "$(cd "$(dirname "$file")" && pwd -P)"
-              #echo "$(cd "$(dirname "$file")")"
+              #echo "$file was changed" #Lec03_files/file1.txt
+              #echo "$(dirname "${file}")" #Lec03_files
+              #echo "$(cd "$(dirname "$file")" && pwd -P)/$(basename "$file")" #/home/runnes/work/test1/test1/Lec03_files/file1.txt
+              #echo "$(cd "$(dirname "$file")" && pwd -P)" #/home/runnes/work/test1/test1/Lec03_files
               cd $(cd "$(dirname "$file")" && pwd -P) #in the parent's folder
               
               #Installing jupyter & regex
               python -m pip install jupyter
               python -m pip install regex
+              
               #echo "Hello there" > file1.txt
               jupyter nbconvert $(basename "$file") --to python
-              python create_requirements.py #create the requirements if the present folder
-              pip install -r requirements.txt #needs input or preceed action
+              
+              
+
               jupyter nbconvert --execute --to markdown $(basename "$file").ipynb
               mv $(basename "$file") $(basename "${file%%.*}")_files
               mv $(basename "${file%%.*}").py $(basename "${file%%.*}")_files
@@ -57,6 +58,11 @@ jobs:
               mv $(basename "${file%%.*}").md $(basename "${file%%.*}")_files
             fi
           done
+          if [[ $(ls .) == *.py ]]; then
+            python create_requirements.py   #create the requirements in the present folder
+            pip install -r requirements.txt #needs input or preceed action
+          fi
+          
           
       - name: Configure Git
         run: |
