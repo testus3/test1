@@ -1,0 +1,62 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # windows-latest | macos-latest
+    name: Test changed-files
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2  # OR "2" -> To retrieve the preceding commit.
+          
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v23
+
+      - name: List all changed files
+        run: |
+          if [[ $(ls .) == *.ipynb ]]; then
+            pip install jupyter
+            pip install regex
+          fi
+          
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            if [[ $file == *.ipynb ]]; then
+              cd $(cd "$(dirname "$file")" && pwd -P) #in the parent's folder              
+              jupyter nbconvert $(basename "$file") --to python #$(basename "$file") = files.ipynb
+            fi
+          done
+          
+          if [[ $(ls .) == *.py ]]; then
+            python create_requirements.py   #create the requirements in the present folder
+            pip install -r requirements.txt #needs input or preceed action
+          fi
+          
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            if [[ $file == *.ipynb ]]; then
+              jupyter nbconvert --execute --to markdown $(basename "$file")
+              mv $(basename "$file") $(basename "${file%%.*}")_files
+              mv $(basename "${file%%.*}").py $(basename "${file%%.*}")_files
+              mv requirements.txt $(basename "${file%%.*}")_files
+              python beautifyJupyterReadme.py
+              mv $(basename "${file%%.*}").md $(basename "${file%%.*}")_files/README.md
+            fi
+          done
+          
+      - name: Configure Git
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          echo "this is the message1"
+          git status
+          echo "this is the message2"
+          git add .
+          # commit if there are updates
+          git diff --quiet && git diff --staged --quiet || git commit -am 'Added license headers'
+          git push origin main -f
