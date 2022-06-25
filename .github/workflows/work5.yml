@@ -23,7 +23,7 @@ jobs:
         run: |
           ls .
           if [[ $(ls .) == *.ipynb ]]; then
-            pip install jupyter
-            pip install regex
+            python -m pip install jupyter
+            python -m pip install regex
             echo "ipynb file found"
           fi
