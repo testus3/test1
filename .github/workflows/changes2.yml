@@ -30,6 +30,7 @@ jobs:
               echo "$(cd "$(dirname "$file")" && pwd -P)/$(basename "$file")"
               echo "$(cd "$(dirname "$file")" && pwd -P)"
               echo "$(cd "$(dirname "$file")")"
+              echo "$(basename "$file")"
               cd $(cd "$(dirname "$file")" && pwd -P)
               
               #Installing jupyter & regex
