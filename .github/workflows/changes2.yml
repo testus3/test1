@@ -29,7 +29,6 @@ jobs:
               echo "$(dirname "${file}")"
               echo "$(cd "$(dirname "$file")" && pwd -P)/$(basename "$file")"
               echo "$(cd "$(dirname "$file")" && pwd -P)"
-              echo "$(cd "$(dirname "$file")")"
               echo "this is the file name"
               echo "$(basename "$file")"
               echo "ends file name"
@@ -39,6 +38,8 @@ jobs:
               #python -m pip install jupyter
               #python -m pip install regex
               #echo "Hello there" > file1.txt
+              mkdir $(dirname "${file}")_newfolder
+              ls
               ls
             fi
           done
