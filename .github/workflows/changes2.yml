@@ -30,7 +30,7 @@ jobs:
               echo "$(cd "$(dirname "$file")" && pwd -P)/$(basename "$file")"
               echo "$(cd "$(dirname "$file")" && pwd -P)"
               echo "$(cd "$(dirname "$file")")"
-              echo "this is the file's name"
+              echo "this is the file name"
               echo "$(basename "$file")"
               echo "ends file name'
               cd $(cd "$(dirname "$file")" && pwd -P)
