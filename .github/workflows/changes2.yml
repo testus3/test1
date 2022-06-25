@@ -33,6 +33,8 @@ jobs:
               echo "this is the file name"
               echo "$(basename "$file")"
               echo "ends file name"
+              $(basename "$file")
+              echo "2nd ends"
               cd $(cd "$(dirname "$file")" && pwd -P)
               #Installing jupyter & regex
               #python -m pip install jupyter
