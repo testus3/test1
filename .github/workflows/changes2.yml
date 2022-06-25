@@ -23,6 +23,11 @@ jobs:
 
       - name: List all changed files
         run: |
+          if [[ ${{ steps.changed-files.outputs.all_changed_files }} == *.txt ]]; then
+            echo "A txt file was modified/added"
+          else
+            echo "A txt file was not added/modified"
+          fi
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             if [[ $file == *.txt ]]; then
               echo "$file was changed"
