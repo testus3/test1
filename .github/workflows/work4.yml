@@ -48,9 +48,11 @@ jobs:
               mv $(basename "${file%%.*}").py $(basename "${file%%.*}")_files
               mv requirements.txt $(basename "${file%%.*}")_files
               python beautifyJupyterReadme.py
+              cat $(basename "${file%%.*}").md >> README.md
               mv $(basename "${file%%.*}").md $(basename "${file%%.*}")_files/README.md
             fi
           done
+          
           
       - name: Configure Git
         run: |
