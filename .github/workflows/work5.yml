@@ -22,10 +22,10 @@ jobs:
       - name: List all changed files
         run: |
           ls .
-          count=`ls -1 *.txt 2> /dev/null | wc -l`
+          count=`ls -1 *.py 2> /dev/null | wc -l`
           echo $count
           
-          if [[ $count != 0 ]]; then
+          if [[ $count == 2 ]]; then
             #python -m pip install jupyter
             #python -m pip install regex
             echo "txt file found"
