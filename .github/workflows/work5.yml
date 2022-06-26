@@ -22,8 +22,11 @@ jobs:
       - name: List all changed files
         run: |
           ls .
-          if [[ $(ls .) == *.ipynb ]]; then
-            python -m pip install jupyter
-            python -m pip install regex
-            echo "ipynb file found"
+          count=`ls -1 *.txt 2> /dev/null | wc -l`
+          echo $count
+          
+          if [[$files != 0]]; then
+            #python -m pip install jupyter
+            #python -m pip install regex
+            echo "txt file found"
           fi
