@@ -26,7 +26,7 @@ jobs:
           #echo $count
           
           if [[ `ls -1 *.py 2> /dev/null | wc -l` == 2 ]]; then
-            #python -m pip install jupyter
-            #python -m pip install regex
+            python -m pip install jupyter
+            python -m pip install regex
             echo "python file found"
           fi
