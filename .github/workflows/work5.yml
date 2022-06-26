@@ -25,8 +25,9 @@ jobs:
           #count=`ls -1 *.py 2> /dev/null | wc -l`
           #echo $count
           
-          if [[ `ls -1 *.py 2> /dev/null | wc -l` == 2 ]]; then
-            python -m pip install jupyter
-            python -m pip install regex
-            echo "python file found"
+          #if [[ `ls -1 *.py 2> /dev/null | wc -l` == 2 ]]; then
+          if [[ $(ls .) == *.ipynb; then
+            #python -m pip install jupyter
+            #python -m pip install regex
+            echo "ipynb file found"
           fi
