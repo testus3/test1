@@ -1,4 +1,4 @@
-## Lab 2: Simple Linear Regression
+## Lab 2: Simple Linear Regresion now
 
 ### 1. Manipulate the data <img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{\text{fd}_{(398x6)}}" align="center">
 
@@ -103,6 +103,8 @@ fd.head(5)
 </div>
 
 
+
+
 ```python
 import numpy as np
 import pandas as pd
@@ -167,7 +169,6 @@ dfshow.head(4)
 
 ### 2. Compute the means (<img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{\bar{x},\bar{y}}" align="center">), covariance (<img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{S_{xy},S_{xx}}" align="center">) and <img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{\beta}" align="center">s as:
 
-
 $$
 \begin{align}
 \bar{x} &= \frac{1}{N}\sum_{i=1}^{N}{(x_i)} &
@@ -180,7 +181,6 @@ RSS_{(\beta_0,\beta_1)} &:=\sum^n_{i=1}{(y_i-\hat{y}_i)^2} &
 \hat{y}_i &= \beta_1x_i + \beta_0
 \end{align}
 $$
-
 
 Tasks:
 
@@ -221,7 +221,7 @@ plt.show()
     thi is xm: 193.426 thi is ym: 23.515
     beta_1:  -0.06028240546881722
     beta_0: 35.17475015429319
-    
+
 
 
     
@@ -237,16 +237,14 @@ Tasks:
 
 Example: Pick all <img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{a_n|b_n>2}" align="center">
 
-
 $$
-a_n \quad b_n\\
+a_n\,\,\,b_n\\
 \begin{bmatrix}
 6 & 2\\
 8 & 4\\
 4 & 8
 \end{bmatrix}
 $$
-
 
 Then <img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{a_n=\{8,4\}}" align="center">, in programming to calculate the mean of such <img src="https://latex.codecogs.com/svg.image?{\large\color{Blue}\pmb{a_n}" align="center"> with that condition, it'll be `print(np.mean(an[bn>2]))` 
 
@@ -270,7 +268,7 @@ print(np.mean(xn[yn>2]))
     6.0
     4.0
     6.0
-    
+
 
 
 ```python
@@ -282,7 +280,7 @@ print('Mean of mpg | acc>25: %.2f' %np.mean(y[acc>15]))
 ```
 
     Mean of mpg | acc>25: 25.85
-    
+
 
 
     
@@ -296,8 +294,8 @@ print('Mean of mpg | acc>25: %.2f' %np.mean(y[acc>15]))
 ```
 
     [NbConvertApp] Converting notebook Lec02.ipynb to markdown
-    [NbConvertApp] Support files will be in Lec02_files\
+    [NbConvertApp] Support files will be in Lec02_files/
     [NbConvertApp] Making directory Lec02_files
     [NbConvertApp] Making directory Lec02_files
-    [NbConvertApp] Writing 6520 bytes to Lec02.md
-    
+    [NbConvertApp] Writing 6512 bytes to Lec02.md
+
