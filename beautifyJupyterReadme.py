@@ -2,18 +2,22 @@ import re
 import os
 
 folder = '.'
-
 files = [f for f in os.listdir(folder) if f.endswith(".md")]
 
 urlStringStart = "<img src=\"https://latex.codecogs.com/svg.image?{\\large\\color{Blue}\\pmb{"
 urlStringEnd = "}\" align=\"center\">"
 
-
-#pattern1dollar = "[^0-9a-zA-Z?]\$(.*)\$[^\$0-9a-zA-Z?]"
 pattern1dollar = "[^\$0-9a-zA-Z?]\$(.*?)\$[^\$0-9?]"
-#patternDollarDollar = "(?<=\$\$)[\S\s]*(?=\$\$)"
-#patternDollarDollar = "(?<=\$\$)[\S\s]*(?=\n\$\$)"
 patternDollarDollar = "(?s)(?<=\$\$)(.*?)(?=\$\$)"
+#patternTitle = "(^\#\.*?\n$)"
+#patternTitle = "(^#)(.*)(\n$)"
+#patternTitle = "\b#\.\w+\n$"
+#patternTitle = "(\b#)(.*)(\n$)"
+#patternTitle = "^#.*?\n$"
+#patternTitle = "^#.*?\*\*\n" #['## **Lab 2: Simple Linear Regression**\n']
+#patternTitle = "^#\#\#.*\n"
+patternTitle = '^#.*'
+patternPics = '^\!\[png\].*'
 
 
 #Fix equations and add bold & style
@@ -21,36 +25,48 @@ for file in files:
     with open(os.path.join(folder, file), mode="r") as f:
         lines = f.read()
         
-        # Delete bolds from jupyter
-        lines = lines.replace("**", "")
-        #lines = lines.replace("\$\$(.*)\$\$", "\n\$\$(.*)\n")
-        #lines = re.sub('\$\$(.*)\$\$', '\n\$\$(.*)\$\$\n', lines)
-        # Fix equation title list(filter(None, ))
-        
+        #lines = lines.replace("**", "")
+
         arrayDollars = list(filter(None,re.findall(pattern1dollar, lines)))
         arrayDollarsDollars = list(filter(None,re.findall(patternDollarDollar, lines)))
-        
-        #print(arrayDollars)
+        arrayTitle = list(filter(None,re.findall(patternTitle, lines, re.M))) #return all line
+        newarrayTitle = [s.replace("**", "") for s in arrayTitle]
+
         
         #Counting number of ocurrences of $$
         numberOfOcurrences = len(arrayDollars)
-        #print(numberOfOcurrences)
-        #print(re.findall(pattern1dollar, lines))
-        
         numberOfOcurrencesDD = len(arrayDollarsDollars)
+        numberOfOcurrencesTitle = len(arrayTitle)
+        #print(numberOfOcurrencesTitle)
+        #print(arrayTitle)
+        
         substringsDD = arrayDollarsDollars
-        #print(substringsDD)
-        #print(len(substringsDD))
-        for i in range(numberOfOcurrencesDD):
-            # totalsubstringDD = "$$" + substringsDD[i] +"$$" # todo string $..$
-            # #print(totalsubstringDD)
-            # newsubstringDD =  "\n$$" +  substringsDD[i] + "$$\n"
+        
+        # Fix picture source
+        arrayPics = list(filter(None,re.findall(patternPics, lines, re.M)))
+        numberOfOcurrencesPics = len(arrayPics)
+        fixarrayPics = []
+        for i in range(numberOfOcurrencesPics):
+            fixarrayPics.append("![png](" + arrayPics[i].split('/', 1)[1])
+            with open(os.path.join(folder, file), mode="w") as f:
+                lines = lines.replace(arrayPics[i], fixarrayPics[i])
+                f.write(lines)
+                
+        #print(fixarrayPics)
+        #for i in range(numberOfOcurrencesPics):
             # with open(os.path.join(folder, file), mode="w") as f:
-                # lines = lines.replace(totalsubstringDD, newsubstringDD)
+                # lines = lines.replace(arrayPics[i], fixarrayPics[i])
                 # f.write(lines)
+
+        # Delete ** from title
+        for i in range(numberOfOcurrencesTitle):
+            with open(os.path.join(folder, file), mode="w") as f:
+                lines = lines.replace(arrayTitle[i], newarrayTitle[i])
+                f.write(lines)
+        
+        for i in range(numberOfOcurrencesDD):
             if(i <= (numberOfOcurrencesDD +1)*0.5):
                 totalsubstringDD = "$$" + substringsDD[i] +"$$" # todo string $..$
-                #print(totalsubstringDD)
                 newsubstringDD =  "\n$$" +  substringsDD[i] + "$$\n"
                 with open(os.path.join(folder, file), mode="w") as f:
                     lines = lines.replace(totalsubstringDD, newsubstringDD)
@@ -74,3 +90,11 @@ for file in files:
         textWithoutStyle = re.sub('<style scoped>(\n.*?)*?\n</style>\n', '', lines, flags=re.MULTILINE)
         with open(os.path.join(folder, file), mode="w") as f:
             f.write(textWithoutStyle)
+
+# print(arrayTitle)
+# new_list = [s.replace("**", "") for s in arrayTitle]
+# print(new_list)
+
+# print(numberOfOcurrencesPics)
+# print(arrayPics)
+# print(fixarrayPics)
