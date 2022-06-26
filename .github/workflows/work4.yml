@@ -22,7 +22,7 @@ jobs:
       - name: List all changed files
         run: |
           ls .
-          if [[ $(ls .) == *.ipynb ]]; then
+          if [[ `ls -1 *.ipynb 2> /dev/null | wc -l` != 0 ]]; then  #install jupyter if there are notebooks
             pip install jupyter
             pip install regex
             echo "ipynb file found"
@@ -30,12 +30,13 @@ jobs:
           
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             if [[ $file == *.ipynb ]]; then
-              cd $(cd "$(dirname "$file")" && pwd -P) #in the parent's folder              
+              #cd $(cd "$(dirname "$file")" && pwd -P) #in the parent's folder              
               jupyter nbconvert $(basename "$file") --to python #$(basename "$file") = files.ipynb
             fi
           done
           
-          if [[ $(ls .) == *.py ]]; then
+          #if [[ $(ls .) == *.py ]]; then
+          if [[ `ls -1 *.py 2> /dev/null | wc -l` != 0 ]]; then  #install jupyter if there are notebooks
             python create_requirements.py   #create the requirements in the present folder
             pip install -r requirements.txt #needs input or preceed action
           fi
@@ -55,9 +56,9 @@ jobs:
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
-          echo "this is the message1"
-          git status
-          echo "this is the message2"
+          #echo "this is the message1"
+          #git status
+          #echo "this is the message2"
           git add .
           # commit if there are updates
           git diff --quiet && git diff --staged --quiet || git commit -am 'Added license headers'
