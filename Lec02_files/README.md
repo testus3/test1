@@ -225,7 +225,7 @@ plt.show()
 
 
     
-![png](Lec02_files/Lec02_5_1.png)
+![png](Lec02_5_1.png)
     
 
 
