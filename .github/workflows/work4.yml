@@ -47,13 +47,16 @@ jobs:
               mv $(basename "$file") $(basename "${file%%.*}")_files
               mv $(basename "${file%%.*}").py $(basename "${file%%.*}")_files
               mv requirements.txt $(basename "${file%%.*}")_files
-              python beautifyJupyterReadme.py
-              cat README.md >> $(basename "${file%%.*}").md
+              cp $(basename "${file%%.*}").md $(basename "${file%%.*}")_copy.md
+              python beautifyJupyter.py  #outputs lec02.md path fixed
               mv $(basename "${file%%.*}").md $(basename "${file%%.*}")_files/README.md
+              python beautifyJupyterReadme.py # searches MD files/outputs lec02.md path of main root
+              echo \ >> $(basename "${file%%.*}")_copy.md
+              cat README.md >> $(basename "${file%%.*}")_copy.md
+              mv $(basename "${file%%.*}")_copy.md README.md
             fi
           done
-          
-          
+             
       - name: Configure Git
         run: |
           git config user.name "GitHub Actions Bot"
