@@ -2,7 +2,7 @@ import re
 import os
 
 folder = '.'
-files = [f for f in os.listdir(folder) if f.endswith(".md")]
+files = [f for f in os.listdir(folder) if f.endswith(".mdc")]
 
 urlStringStart = "<img src=\"https://latex.codecogs.com/svg.image?{\\large\\color{Blue}\\pmb{"
 urlStringEnd = "}\" align=\"center\">"
