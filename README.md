@@ -1,4 +1,4 @@
-# Lab 1. Pick interval with condition and drop NA values
+## Lab 1. Pick interval with condition and drop NA values
 Tasks:
 
   3.1   Pick values of y (mpg) so that its acceleration `acc>25`<br>
