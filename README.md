@@ -54,9 +54,6 @@ print('Mean of mpg | acc>25: %.2f' %np.mean(y[acc>15]))
     
 
 
-    
-![png](Lec02_files/Lec02_8_1.png)
-    
 
 
 
