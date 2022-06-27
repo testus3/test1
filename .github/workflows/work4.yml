@@ -48,9 +48,9 @@ jobs:
               mv $(basename "${file%%.*}").py $(basename "${file%%.*}")_files
               mv requirements.txt $(basename "${file%%.*}")_files
               cp $(basename "${file%%.*}").md $(basename "${file%%.*}")_copy.md
-              python beautifyJupyter.py  #outputs lec02.md path fixed
+              python beautifyJupyterReadme.py  #outputs lec02.md path fixed
               mv $(basename "${file%%.*}").md $(basename "${file%%.*}")_files/README.md
-              python beautifyJupyterReadme.py # searches MD files/outputs lec02.md path of main root
+              python beautifyJupyter.py # searches MD files/outputs lec02.md path of main root
               echo \ >> $(basename "${file%%.*}")_copy.md
               cat README.md >> $(basename "${file%%.*}")_copy.md
               mv $(basename "${file%%.*}")_copy.md README.md
