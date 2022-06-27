@@ -55,15 +55,3 @@ print('Mean of mpg | acc>25: %.2f' %np.mean(y[acc>15]))
 
 
 
-
-
-```python
-!jupyter nbconvert --execute --to markdown Lec02.ipynb
-```
-
-    [NbConvertApp] Converting notebook Lec02.ipynb to markdown
-    [NbConvertApp] Support files will be in Lec02_files\
-    [NbConvertApp] Making directory Lec02_files
-    [NbConvertApp] Making directory Lec02_files
-    [NbConvertApp] Writing 6520 bytes to Lec02.md
-    
